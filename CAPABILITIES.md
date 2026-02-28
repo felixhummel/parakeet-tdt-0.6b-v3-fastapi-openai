@@ -34,7 +34,7 @@ print(result)
 - Endpunkt: `POST /v1/audio/transcriptions`
 - Kein API-Key erforderlich
 - Kompatibel mit dem OpenAI Python SDK, openai-go, etc.
-- Maximale Dateigröße: 2.000 MB
+- Maximale Dateigröße: 2.000 MB (~2 GB) (`app.py:182`)
 
 ---
 
@@ -81,6 +81,18 @@ curl ... -F "response_format=vtt"
   "no_speech_prob": 0.0
 }
 ```
+
+| Key | Beschreibung |
+|---|---|
+| `id` | Fortlaufende Segment-Nummer (0-basiert) |
+| `start` | Startzeit des Segments in Sekunden |
+| `end` | Endzeit des Segments in Sekunden |
+| `text` | Transkribierter Text dieses Segments |
+| `tokens` | Token-IDs des Segments (immer leer, vom Modell nicht befüllt) |
+| `temperature` | Sampling-Temperatur (immer `0.0`, Modell nutzt kein Sampling) |
+| `avg_logprob` | Durchschnittliche Log-Wahrscheinlichkeit (immer `0.0`, nicht berechnet) |
+| `compression_ratio` | Verhältnis von Rohtext zu komprimiertem Text (immer `0.0`, nicht berechnet) |
+| `no_speech_prob` | Wahrscheinlichkeit, dass das Segment kein Sprach enthält (immer `0.0`, nicht berechnet) |
 
 ---
 
