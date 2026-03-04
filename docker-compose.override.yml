@@ -1,0 +1,11 @@
+services:
+
+  parakeet-cpu:
+    build:
+      context: .
+      dockerfile: Dockerfile.cpu
+
+  parakeet-gpu:
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu

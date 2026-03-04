@@ -3,10 +3,7 @@ version: '3.8'
 services:
   # CPU-only deployment (default)
   parakeet-cpu:
-    build:
-      context: .
-      dockerfile: Dockerfile.cpu
-    image: parakeet-tdt:cpu
+    image: ghcr.io/felixhummel/parakeet-tdt-0.6b-v3-fastapi-openai:cpu
     container_name: parakeet-cpu
     ports:
       - "5092:5092"
@@ -22,10 +19,7 @@ services:
 
   # GPU deployment (requires NVIDIA Container Toolkit)
   parakeet-gpu:
-    build:
-      context: .
-      dockerfile: Dockerfile.gpu
-    image: parakeet-tdt:gpu
+    image: ghcr.io/felixhummel/parakeet-tdt-0.6b-v3-fastapi-openai:gpu
     container_name: parakeet-gpu
     ports:
       - "5092:5092"
