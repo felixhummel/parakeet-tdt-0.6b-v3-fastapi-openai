@@ -7,6 +7,14 @@
 
 This implementation achieves exceptional real-time speeds, outperforming standard [openai/whisper](https://github.com/openai/whisper) and competing directly with GPU-accelerated [faster-whisper](https://github.com/SYSTRAN/faster-whisper) implementations while running entirely on consumer CPUs. The efficiency is achieved through the architectural advantages of the Token-and-Duration Transducer (TDT) model combined with 8-bit quantization.
 
+## Docker Images
+[Package parakeet-tdt-0.6b-v3-fastapi-openai](https://github.com/felixhummel/parakeet-tdt-0.6b-v3-fastapi-openai/pkgs/container/parakeet-tdt-0.6b-v3-fastapi-openai)
+
+```
+ghcr.io/felixhummel/parakeet-tdt-0.6b-v3-fastapi-openai:cpu
+ghcr.io/felixhummel/parakeet-tdt-0.6b-v3-fastapi-openai:gpu
+```
+
 ## 🌍 Multilingual Support
 
 **Parakeet TDT 0.6B v3** features robust multilingual capabilities with **automatic language detection**. The model can automatically identify and transcribe speech in any of the **25 supported languages** without requiring manual language specification:
